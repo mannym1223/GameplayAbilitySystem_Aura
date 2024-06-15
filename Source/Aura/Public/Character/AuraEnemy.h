@@ -20,4 +20,8 @@ public:
 	virtual void HighlightActor() override;
 	virtual void UnhighlightActor() override;
 
+protected:
+
+	UPROPERTY(BlueprintReadOnly, Category = "Highlight")
+	bool bIsHighlighted;
 };

@@ -109,6 +109,7 @@ void AAuraPlayerController::CursorTrace()
 				// case d
 				LastActor->UnhighlightActor();
 				ThisActor->HighlightActor();
+				UE_LOG(LogTemp, Warning, TEXT("Highlighting AND unhighlighting Actors"));
 			}
 			else {
 				// case e - do nothing
