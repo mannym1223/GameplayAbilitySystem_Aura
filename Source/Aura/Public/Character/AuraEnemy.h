@@ -22,6 +22,4 @@ public:
 
 protected:
 
-	UPROPERTY(BlueprintReadOnly, Category = "Highlight")
-	bool bIsHighlighted;
 };
