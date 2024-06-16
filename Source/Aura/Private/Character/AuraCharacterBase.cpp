@@ -13,12 +13,13 @@ AAuraCharacterBase::AAuraCharacterBase()
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
 	Weapon->SetupAttachment(GetMesh(), FName("WeaponHandSocket"));
 	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
+	/*
 	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
 
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
+	*/
 }
 
 // Called when the game starts or when spawned
