@@ -5,6 +5,8 @@
 #include <EnhancedInputSubsystems.h>
 #include <EnhancedInputComponent.h>
 #include <Interaction/EnemyInterface.h>
+#include <Character/AuraPlayerCharacter.h>
+#include <AbilitySystem/AuraAbilitySystemComponent.h>
 
 AAuraPlayerController::AAuraPlayerController()
 {

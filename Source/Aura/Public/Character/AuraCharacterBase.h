@@ -23,6 +23,8 @@ public:
 
 	UAttributeSet* GetAttributeSet() const;
 
+
+
 protected:
 	virtual void BeginPlay() override;
 
