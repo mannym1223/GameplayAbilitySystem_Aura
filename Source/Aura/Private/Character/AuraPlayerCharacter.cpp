@@ -7,6 +7,8 @@
 #include <AbilitySystem/AuraAbilitySystemComponent.h>
 #include <AbilitySystem/AuraAttributeSet.h>
 
+#include "UI/HUD/AuraHUD.h"
+
 AAuraPlayerCharacter::AAuraPlayerCharacter()
 {
 	GetCharacterMovement()->bOrientRotationToMovement = true;
@@ -26,6 +28,9 @@ void AAuraPlayerCharacter::PossessedBy(AController* controller)
 
 	//init ability actor info for server
 	InitializeAbilityActorInfo();
+
+	//init HUD
+	InitializeHUD();
 }
 
 void AAuraPlayerCharacter::OnRep_PlayerState()
@@ -34,6 +39,9 @@ void AAuraPlayerCharacter::OnRep_PlayerState()
 
 	//init ability actor info for client
 	InitializeAbilityActorInfo();
+
+	//init HUD
+	InitializeHUD();
 }
 
 void AAuraPlayerCharacter::InitializeAbilityActorInfo()
@@ -43,4 +51,13 @@ void AAuraPlayerCharacter::InitializeAbilityActorInfo()
 	playerState->GetAbilitySystemComponent()->InitAbilityActorInfo(playerState, this);
 	AbilitySystemComponent = playerState->GetAbilitySystemComponent();
 	AttributeSet = playerState->GetAttributeSet();
+}
+
+void AAuraPlayerCharacter::InitializeHUD()
+{
+	APlayerController* controller = GetController<APlayerController>();
+	AAuraHUD* hud = Cast<AAuraHUD>((controller)->GetHUD());
+	AAuraPlayerState* playerState = GetPlayerState<AAuraPlayerState>();
+	
+	hud->InitOverlay(controller, playerState, AbilitySystemComponent, AttributeSet);
 }
