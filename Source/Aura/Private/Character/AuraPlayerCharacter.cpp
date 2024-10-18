@@ -50,7 +50,7 @@ void AAuraPlayerCharacter::InitializeAbilityActorInfo()
 	InitializeHUD();
 }
 
-void AAuraPlayerCharacter::InitializeHUD()
+void AAuraPlayerCharacter::InitializeHUD() const
 {
 	if(APlayerController* controller = GetController<APlayerController>())
 	{
