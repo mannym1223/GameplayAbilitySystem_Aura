@@ -56,7 +56,10 @@ void AAuraPlayerCharacter::InitializeHUD() const
 	{
 		AAuraHUD* hud = Cast<AAuraHUD>((controller)->GetHUD());
 		AAuraPlayerState* playerState = GetPlayerState<AAuraPlayerState>();
-		
-		hud->InitOverlay(controller, playerState, AbilitySystemComponent, AttributeSet);
+
+		if(hud != nullptr)
+		{
+			hud->InitOverlay(controller, playerState, AbilitySystemComponent, AttributeSet);
+		}
 	}
 }
